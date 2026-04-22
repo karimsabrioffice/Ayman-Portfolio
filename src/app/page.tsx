@@ -49,7 +49,7 @@ import {
 } from 'lucide-react';
 
 /* ─────────────── Intersection Observer Hook ─────────────── */
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.05) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -62,7 +62,7 @@ function useInView(threshold = 0.15) {
           obs.unobserve(el);
         }
       },
-      { threshold }
+      { threshold, rootMargin: '100px 0px' }
     );
     obs.observe(el);
     return () => obs.disconnect();
