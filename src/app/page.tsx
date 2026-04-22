@@ -608,7 +608,7 @@ export default function Home() {
       </Section>
 
       {/* ───── Education & Certifications ───── */}
-      <Section id="education" label="Education" heading="Academic Background">
+      <Section id="education">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column — Education */}
           <div>
