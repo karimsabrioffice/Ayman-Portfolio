@@ -41,6 +41,10 @@ import {
   Twitter,
   ArrowUp,
   User,
+  Phone,
+  MessageCircle,
+  Award,
+  BookOpen,
 } from 'lucide-react';
 
 /* ─────────────── Intersection Observer Hook ─────────────── */
@@ -610,150 +614,168 @@ export default function Home() {
         <CampaignSunbulah />
       </Section>
 
-      {/* ───── Education ───── */}
+      {/* ───── Education & Certifications ───── */}
       <Section id="education" label="Education" heading="Academic Background">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-          {educations.map((edu, i) => (
-            <div
-              key={i}
-              className="group rounded-2xl p-7 card-hover"
-              style={{
-                background: 'rgba(15,17,21,0.6)',
-                border: '1px solid rgba(255,255,255,0.05)',
-                borderLeftWidth: '3px',
-                borderLeftColor: edu.accentColor,
-              }}
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <GraduationCap size={20} />
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-white font-semibold">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-slate-400 text-sm">{edu.school}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-slate-500 text-sm mb-2">
-                <Calendar size={14} />
-                <span>{edu.period}</span>
-              </div>
-              <p className="text-slate-400 text-sm">{edu.field}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Column — Education */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="gradient-line w-8" />
+              <span className="text-xs uppercase tracking-[0.25em] text-blue-400 font-medium">Education</span>
             </div>
-          ))}
+            <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-6">Academic</h3>
+            <div className="space-y-4">
+              {educations.map((edu, i) => (
+                <div
+                  key={i}
+                  className="group rounded-2xl p-6 card-hover"
+                  style={{
+                    background: 'rgba(15,17,21,0.6)',
+                    border: '1px solid rgba(255,255,255,0.05)',
+                  }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-blue-500/15 text-blue-400 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <GraduationCap size={20} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-[family-name:var(--font-space-grotesk)] text-white font-semibold">
+                        {edu.degree}
+                      </h4>
+                      <p className="text-blue-400 text-sm mt-0.5">{edu.field}</p>
+                      <p className="text-slate-500 text-sm mt-0.5">{edu.school}</p>
+                      <div className="flex items-center gap-2 text-slate-600 text-xs mt-2">
+                        <Calendar size={12} />
+                        <span>{edu.period}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column — Certifications / Courses */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="gradient-line w-8" />
+              <span className="text-xs uppercase tracking-[0.25em] text-blue-400 font-medium">Certifications</span>
+            </div>
+            <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-6">Courses</h3>
+            <div className="space-y-4">
+              {[
+                { title: 'Digital Marketing', subtitle: 'Professional Certification', icon: Award, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+                { title: 'Social Media Strategy', subtitle: 'Professional Certification', icon: BookOpen, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
+                { title: 'Project Management', subtitle: 'Professional Certification', icon: Award, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
+              ].map((cert, i) => {
+                const CertIcon = cert.icon;
+                return (
+                  <div
+                    key={i}
+                    className="group rounded-2xl p-6 card-hover"
+                    style={{
+                      background: 'rgba(15,17,21,0.6)',
+                      border: '1px solid rgba(255,255,255,0.05)',
+                    }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`flex-shrink-0 w-11 h-11 rounded-full ${cert.iconBg} ${cert.iconColor} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                        <CertIcon size={20} />
+                      </div>
+                      <div>
+                        <h4 className="font-[family-name:var(--font-space-grotesk)] text-white font-semibold">
+                          {cert.title}
+                        </h4>
+                        <p className="text-slate-500 text-sm">{cert.subtitle}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </Section>
 
       {/* ───── Contact ───── */}
-      <Section id="contact" label="Get In Touch" heading="Let's Work Together">
-        <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mb-12">
-          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+      <Section id="contact" label="Let's Connect" heading="Get In Touch">
+        <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-center mb-12">
+          Interested in working together? Feel free to reach out.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <div className="space-y-4">
+        <div className="max-w-3xl mx-auto">
+          {/* Contact Cards — 2x2 Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {[
-              { icon: Mail, label: 'Email', value: 'aymanfaried17@gmail.com', href: 'mailto:aymanfaried17@gmail.com', iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
-              { icon: MapPin, label: 'Location', value: 'Cairo, Egypt', href: undefined, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
-              { icon: Clock3, label: 'Availability', value: 'Open to opportunities', href: undefined, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
+              { icon: Phone, label: 'Phone', value: '+20 101 258 1428', href: 'tel:+201012581428', iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
+              { icon: Mail, label: 'Email', value: 'aymanfaried17@gmail.com', href: 'mailto:aymanfaried17@gmail.com', iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+              { icon: MessageCircle, label: 'WhatsApp', value: '+20 101 258 1428', href: 'https://wa.me/201012581428', iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
+              { icon: MapPin, label: 'Location', value: 'Cairo, Egypt', href: undefined, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
             ].map((item, i) => {
               const Icon = item.icon;
               const content = (
                 <div
-                  className="flex items-center gap-4 rounded-2xl p-5 transition-all duration-300 hover:bg-white/[0.03]"
+                  className="group flex items-center gap-4 rounded-2xl p-5 transition-all duration-300 hover:bg-white/[0.03] card-hover"
                   style={{ background: 'rgba(15,17,21,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}
                 >
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-xl ${item.iconBg} ${item.iconColor} flex items-center justify-center`}>
-                    <Icon size={18} />
+                  <div className={`flex-shrink-0 w-11 h-11 rounded-full ${item.iconBg} ${item.iconColor} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
+                    <Icon size={20} />
                   </div>
                   <div>
-                    <p className="text-slate-500 text-xs uppercase tracking-wider">{item.label}</p>
+                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">{item.label}</p>
                     <p className="text-white text-sm font-medium">{item.value}</p>
                   </div>
                 </div>
               );
               return item.href ? (
-                <a key={i} href={item.href}>{content}</a>
+                <a key={i} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{content}</a>
               ) : (
                 <div key={i}>{content}</div>
               );
             })}
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3 pt-4">
-              <a
-                href="https://www.linkedin.com/in/aymanfaried17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
-                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://instagram.com/aymanfaried17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-pink-400 hover:bg-pink-500/10 transition-all duration-200"
-                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="https://x.com/aymanfaried17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-white/10 transition-all duration-200"
-                style={{ border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <Twitter size={18} />
-              </a>
-            </div>
           </div>
 
-          {/* Contact Form */}
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="rounded-2xl p-6 space-y-5"
-            style={{ background: 'rgba(15,17,21,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}
-          >
-            <div>
-              <label className="block text-sm text-slate-400 mb-2">Name</label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="input-glow w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-slate-400 mb-2">Email</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="input-glow w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
-              />
-            </div>
-            <div>
-              <label className="block text-sm text-slate-400 mb-2">Message</label>
-              <textarea
-                rows={4}
-                placeholder="Tell me about your project..."
-                className="input-glow w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-slate-600 focus:outline-none transition-all duration-300 resize-none"
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
-              />
-            </div>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black text-sm font-medium rounded-full hover:bg-slate-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
+          {/* CTA Button */}
+          <div className="flex justify-center">
+            <a
+              href="mailto:aymanfaried17@gmail.com"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black text-sm font-medium rounded-full hover:bg-slate-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
             >
               <Send size={16} />
-              Send Message
-            </button>
-          </form>
+              Send Me an Email
+            </a>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-3 mt-10">
+            <a
+              href="https://www.linkedin.com/in/aymanfaried17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href="https://instagram.com/aymanfaried17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-pink-400 hover:bg-pink-500/10 transition-all duration-200"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://x.com/aymanfaried17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-200 hover:bg-white/10 transition-all duration-200"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <Twitter size={18} />
+            </a>
+          </div>
         </div>
       </Section>
 
