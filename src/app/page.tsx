@@ -45,6 +45,7 @@ import {
   MessageCircle,
   Award,
   BookOpen,
+  ZoomIn,
 } from 'lucide-react';
 
 /* ─────────────── Intersection Observer Hook ─────────────── */
@@ -304,6 +305,22 @@ export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+
+  const openLightbox = (src: string) => setLightboxImg(src);
+  const closeLightbox = () => setLightboxImg(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeLightbox(); };
+    if (lightboxImg) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', onKey);
+    }
+    return () => {
+      if (lightboxImg) document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [lightboxImg]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -584,7 +601,7 @@ export default function Home() {
         </p>
 
         {/* Campaign 01 */}
-        <CampaignRama />
+        <CampaignRama onImageClick={openLightbox} />
 
         {/* Decorative Separator */}
         <div className="campaign-separator">
@@ -594,7 +611,7 @@ export default function Home() {
         </div>
 
         {/* Campaign 02 */}
-        <CampaignAlshakreen />
+        <CampaignAlshakreen onImageClick={openLightbox} />
 
         {/* Decorative Separator */}
         <div className="campaign-separator">
@@ -604,7 +621,7 @@ export default function Home() {
         </div>
 
         {/* Campaign 03 */}
-        <CampaignSunbulah />
+        <CampaignSunbulah onImageClick={openLightbox} />
       </Section>
 
       {/* ───── Education & Certifications ───── */}
@@ -834,6 +851,29 @@ export default function Home() {
         </div>
       </footer>
 
+      {/* ───── Lightbox Modal ───── */}
+      {lightboxImg && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 animate-fade-in-up"
+          onClick={closeLightbox}
+          style={{ background: 'rgba(0,0,0,0.92)', backdropFilter: 'blur(8px)' }}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all duration-200 z-10"
+            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            <X size={20} />
+          </button>
+          <img
+            src={lightboxImg}
+            alt="Campaign preview"
+            className="max-w-full max-h-[90vh] object-contain rounded-xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       {/* ───── Back to Top Button ───── */}
       <button
         onClick={scrollToTop}
@@ -920,21 +960,25 @@ function ExpContent({ exp, alignRight }: { exp: typeof experiences[number]; alig
 }
 
 /* ─────────────── Campaign 01 — Rama Clinics ─────────────── */
-function CampaignRama() {
+function CampaignRama({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
   return (
     <div
       ref={ref}
       className={`mb-4 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      {/* Hero Banner — taller */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8">
+      {/* Hero Banner — clickable */}
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://z-cdn-media.chatglm.cn/files/9d94c84a-2f04-4503-aa2e-342431bff5ad.png?auth_key=1876880941-541e26890c0d4afaa430ab413dc01509-0-01783a3eaa1fcb8a8f7a030a64c0d489')}>
         <img
           src="https://z-cdn-media.chatglm.cn/files/9d94c84a-2f04-4503-aa2e-342431bff5ad.png?auth_key=1876880941-541e26890c0d4afaa430ab413dc01509-0-01783a3eaa1fcb8a8f7a030a64c0d489"
           alt="Rama Clinics Brand Campaign"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.3) 50%, transparent 100%)' }} />
+        {/* Zoom icon */}
+        <div className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+          <ZoomIn size={16} />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-500/15 text-amber-400 border border-amber-500/20">
@@ -1005,7 +1049,7 @@ function CampaignRama() {
             num: '03',
           },
         ].map((img, i) => (
-          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.05)' }} onClick={() => onImageClick(img.src)}>
             <img src={img.src} alt={img.title} className="gallery-image w-full h-72 md:h-96 object-cover" />
             <div className="gallery-overlay absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 60%)' }}>
               <div>
@@ -1013,6 +1057,10 @@ function CampaignRama() {
                 <p className="text-white font-medium text-sm">{img.title}</p>
                 <p className="text-slate-400 text-xs">{img.desc}</p>
               </div>
+            </div>
+            {/* Zoom icon */}
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+              <ZoomIn size={14} />
             </div>
             {/* Gold/warm border glow on hover */}
             <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(245,158,11,0.3), 0 0 20px rgba(245,158,11,0.1)' }} />
@@ -1024,21 +1072,25 @@ function CampaignRama() {
 }
 
 /* ─────────────── Campaign 02 — Alshakreen ─────────────── */
-function CampaignAlshakreen() {
+function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
   return (
     <div
       ref={ref}
       className={`mb-4 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      {/* Hero Banner — taller */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8">
+      {/* Hero Banner — clickable */}
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://z-cdn-media.chatglm.cn/files/ccfc575c-fca8-42cc-9133-25077d13539d.png?auth_key=1876881557-0f32bd3ad40c49219fd59d800fbd446f-0-c92a85c9b921482e6871ec7965dff7b8')}>
         <img
           src="https://z-cdn-media.chatglm.cn/files/ccfc575c-fca8-42cc-9133-25077d13539d.png?auth_key=1876881557-0f32bd3ad40c49219fd59d800fbd446f-0-c92a85c9b921482e6871ec7965dff7b8"
           alt="Alshakreen Desert Heritage Campaign"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.3) 50%, transparent 100%)' }} />
+        {/* Zoom icon */}
+        <div className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+          <ZoomIn size={16} />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-orange-500/15 text-orange-400 border border-orange-500/20">
@@ -1141,13 +1193,17 @@ function CampaignAlshakreen() {
             num: '04',
           },
         ].map((img, i) => (
-          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.05)' }} onClick={() => onImageClick(img.src)}>
             <img src={img.src} alt={img.title} className="gallery-image w-full h-72 md:h-[420px] object-cover" />
             <div className="gallery-overlay absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 60%)' }}>
               <div>
                 <span className="text-orange-400/60 text-xs font-mono mb-1 block">{img.num}</span>
                 <p className="text-white font-medium text-sm">{img.title}</p>
               </div>
+            </div>
+            {/* Zoom icon */}
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+              <ZoomIn size={14} />
             </div>
             {/* Warm border glow on hover */}
             <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(249,115,22,0.3), 0 0 20px rgba(249,115,22,0.1)' }} />
@@ -1159,21 +1215,25 @@ function CampaignAlshakreen() {
 }
 
 /* ─────────────── Campaign 03 — Sunbulah ─────────────── */
-function CampaignSunbulah() {
+function CampaignSunbulah({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
   return (
     <div
       ref={ref}
       className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      {/* Hero Banner — taller */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8">
+      {/* Hero Banner — clickable */}
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf931_E09B9609-AA81-47F9-B210-0AA2C2780A8E.png')}>
         <img
           src="https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf931_E09B9609-AA81-47F9-B210-0AA2C2780A8E.png"
           alt="Sunbulah Campaign"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.3) 50%, transparent 100%)' }} />
+        {/* Zoom icon */}
+        <div className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+          <ZoomIn size={16} />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/15 text-yellow-400 border border-yellow-500/20">
@@ -1208,7 +1268,7 @@ function CampaignSunbulah() {
             num: '02',
           },
         ].map((img, i) => (
-          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.05)' }} onClick={() => onImageClick(img.src)}>
             <img src={img.src} alt={img.title} className="gallery-image w-full h-72 md:h-96 object-cover" />
             <div className="gallery-overlay absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 60%)' }}>
               <div>
