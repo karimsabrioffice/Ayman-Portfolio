@@ -621,7 +621,7 @@ export default function Home() {
         </div>
 
         {/* Campaign 03 */}
-        <CampaignSunbulah onImageClick={openLightbox} />
+        <CampaignOriel onImageClick={openLightbox} />
       </Section>
 
       {/* ───── Education & Certifications ───── */}
@@ -1214,19 +1214,27 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
   );
 }
 
-/* ─────────────── Campaign 03 — Sunbulah ─────────────── */
-function CampaignSunbulah({ onImageClick }: { onImageClick: (src: string) => void }) {
+/* ─────────────── Campaign 03 — Oriel Clinics ─────────────── */
+function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
+  const images = [
+    { src: '/campaigns/orielclinics/1.png', title: 'Brand Identity', desc: 'Visual brand expression', num: '01' },
+    { src: '/campaigns/orielclinics/2.png', title: 'Social Media Design', desc: 'Digital creative assets', num: '02' },
+    { src: '/campaigns/orielclinics/3.png', title: 'Campaign Creative', desc: 'Marketing visuals', num: '03' },
+    { src: '/campaigns/orielclinics/4.png', title: 'Content Strategy', desc: 'Engaging content design', num: '04' },
+    { src: '/campaigns/orielclinics/5.png', title: 'Visual Storytelling', desc: 'Brand narrative design', num: '05' },
+    { src: '/campaigns/orielclinics/6.png', title: 'Digital Presence', desc: 'Online brand experience', num: '06' },
+  ];
   return (
     <div
       ref={ref}
       className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Hero Banner — clickable */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf931_E09B9609-AA81-47F9-B210-0AA2C2780A8E.png')}>
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/orielclinics/1.png')}>
         <img
-          src="https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf931_E09B9609-AA81-47F9-B210-0AA2C2780A8E.png"
-          alt="Sunbulah Campaign"
+          src="/campaigns/orielclinics/1.png"
+          alt="Oriel Clinics Campaign"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.3) 50%, transparent 100%)' }} />
@@ -1236,49 +1244,36 @@ function CampaignSunbulah({ onImageClick }: { onImageClick: (src: string) => voi
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/15 text-yellow-400 border border-yellow-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
               <Star size={12} /> Campaign 03
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-500/15 text-blue-400 border border-blue-500/20">
-              <MapPinned size={12} /> Saudi Arabia
+              <MapPinned size={12} /> Egypt
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/15 text-purple-400 border border-purple-500/20">
               <LayoutGrid size={12} /> Social Media
             </span>
           </div>
           <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl md:text-3xl font-bold text-white">
-            Sunbulah <span className="gradient-text-gold">Campaign</span>
+            Oriel Clinics <span className="gradient-text-gold">Campaign</span>
           </h3>
         </div>
       </div>
 
-      {/* Gallery — taller */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {[
-          {
-            src: 'https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf931_E09B9609-AA81-47F9-B210-0AA2C2780A8E.png',
-            title: 'Traditional Flavors',
-            desc: 'Heritage cuisine visuals',
-            num: '01',
-          },
-          {
-            src: 'https://media.base44.com/images/public/69e9227a61bcc5bb750353a2/600cbf921_1E89C0DD-06FB-4B61-871E-8FA9B2C49F5D.png',
-            title: 'Heritage Cuisine',
-            desc: 'Authentic Saudi food styling',
-            num: '02',
-          },
-        ].map((img, i) => (
+      {/* Gallery — 2 columns with 6 images */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {images.map((img, i) => (
           <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.05)' }} onClick={() => onImageClick(img.src)}>
-            <img src={img.src} alt={img.title} className="gallery-image w-full h-72 md:h-96 object-cover" />
+            <img src={img.src} alt={img.title} className="gallery-image w-full h-64 md:h-80 object-cover" />
             <div className="gallery-overlay absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 60%)' }}>
               <div>
-                <span className="text-yellow-400/60 text-xs font-mono mb-1 block">{img.num}</span>
+                <span className="text-emerald-400/60 text-xs font-mono mb-1 block">{img.num}</span>
                 <p className="text-white font-medium text-sm">{img.title}</p>
                 <p className="text-slate-400 text-xs">{img.desc}</p>
               </div>
             </div>
-            {/* Gold border glow on hover */}
-            <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(234,179,8,0.3), 0 0 20px rgba(234,179,8,0.1)' }} />
+            {/* Green border glow on hover */}
+            <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.1)' }} />
           </div>
         ))}
       </div>
