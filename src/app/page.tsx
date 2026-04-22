@@ -229,17 +229,10 @@ const experiences = [
 const educations = [
   {
     degree: 'Bachelor of Commerce',
-    school: 'Cairo University',
-    period: '2017 - 2021',
+    school: 'Mansoura University',
+    period: '2016 — 2020',
     field: 'Business Administration',
     accentColor: '#3b82f6',
-  },
-  {
-    degree: 'Business Administration',
-    school: 'German University in Cairo (GUC)',
-    period: '2016 - 2017',
-    field: 'Transfer',
-    accentColor: '#8b5cf6',
   },
 ];
 
@@ -840,19 +833,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* ───── Final Image Section ───── */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-            <img
-              src="/bottom-image.png"
-              alt="Ayman Faried"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* ───── Back to Top Button ───── */}
       <button
