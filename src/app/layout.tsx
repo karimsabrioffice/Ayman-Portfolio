@@ -20,12 +20,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ayman Faried — Account Manager & Campaign Strategist",
+  title: "Ayman Faried — Traffic Manager & Campaign Strategist",
   description:
-    "Portfolio of Ayman Faried — Account Manager with 5+ years of experience in campaign management, client relations, and workflow optimization across top agencies.",
+    "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization across top agencies.",
   keywords: [
     "Ayman Faried",
-    "Account Manager",
+    "Traffic Manager",
     "Campaign Manager",
     "Marketing",
     "Portfolio",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Ayman Faried — Account Manager & Campaign Strategist",
+    title: "Ayman Faried — Traffic Manager & Campaign Strategist",
     description:
-      "Portfolio of Ayman Faried — Account Manager with 5+ years of experience in campaign management, client relations, and workflow optimization.",
+      "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization.",
     type: "website",
   },
 };

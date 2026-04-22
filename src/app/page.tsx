@@ -150,7 +150,7 @@ const skills = [
 
 const experiences = [
   {
-    title: 'Account Manager',
+    title: 'Traffic Manager',
     company: 'Rama Medical Group',
     period: 'Apr 2025 — Present',
     color: 'bg-blue-500',
@@ -438,7 +438,7 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-slate-400 text-sm uppercase tracking-[0.2em] mb-3 animate-fade-in-left" style={{ animationDelay: '0.1s' }}>
-              Account Manager
+              Traffic Manager
             </p>
 
             {/* Name — WHITE text, bold and striking */}
@@ -453,7 +453,7 @@ export default function Home() {
 
             {/* Description */}
             <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mb-8 animate-fade-in-left" style={{ animationDelay: '0.3s' }}>
-              Experienced Account Manager specializing in campaign management, client relations, and workflow optimization. Proven track record of delivering impactful marketing campaigns across the MENA region.
+              Experienced Traffic Manager specializing in campaign management, client relations, and workflow optimization. Proven track record of delivering impactful marketing campaigns across the MENA region.
             </p>
 
             {/* CTAs */}
@@ -488,8 +488,8 @@ export default function Home() {
                 <div className="photo-border-inner">
                   <div>
                     <img
-                      src="https://z-cdn-media.chatglm.cn/files/def378c1-382c-437c-8156-40986f0e4b0a.jpeg?auth_key=1876880202-4966b58ccaeb408c84de949e865ba22e-0-e9c028844aca87d06a1be7dd8925b5ad"
-                      alt="Ayman Faried — Account Manager"
+                      src="/profile.png"
+                      alt="Ayman Faried — Traffic Manager"
                       className="w-64 h-80 sm:w-72 sm:h-96 object-cover"
                     />
                   </div>
@@ -819,6 +819,19 @@ export default function Home() {
         </div>
       </footer>
 
+      {/* ───── Final Image Section ───── */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img
+              src="/bottom-image.png"
+              alt="Ayman Faried"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ───── Back to Top Button ───── */}
       <button
         onClick={scrollToTop}
@@ -946,7 +959,7 @@ function CampaignRama() {
       {/* Metadata Cards with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-amber-400' },
+          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-amber-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '3 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
@@ -1053,7 +1066,7 @@ function CampaignAlshakreen() {
       {/* Metadata with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-orange-400' },
+          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-orange-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '4 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
