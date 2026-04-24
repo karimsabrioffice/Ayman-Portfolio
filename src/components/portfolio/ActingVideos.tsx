@@ -26,6 +26,26 @@ const videos: VideoItem[] = [
     driveUrl: 'https://drive.google.com/file/d/19G8PJebO1AQQBzt8DDmr93Ivf5Ieuw3z/preview',
     num: '03',
   },
+  {
+    title: 'المدير الجديد',
+    driveUrl: 'https://drive.google.com/file/d/1jLGxxGcfKfefpS6F-tbdjDOtrtMEkh40/preview',
+    num: '04',
+  },
+  {
+    title: 'سكشن الانترفيو',
+    driveUrl: 'https://drive.google.com/file/d/1dSVBGzIUwuu_aXftvLK0SroOwcqRLA3u/preview',
+    num: '05',
+  },
+  {
+    title: 'Ai and Tech',
+    driveUrl: 'https://drive.google.com/file/d/1BftSbUy8s9FrxO-aU9-b1uuFgxTX3O01/preview',
+    num: '06',
+  },
+  {
+    title: 'عملت كل حاجة عشان تترقى',
+    driveUrl: 'https://drive.google.com/file/d/1_eS_XebrxC6g4DTAbEZ0nxKPX1oKa6ru/preview',
+    num: '07',
+  },
 ];
 
 function VideoCard({ video }: { video: VideoItem }) {
