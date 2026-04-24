@@ -50,7 +50,7 @@ export default function EducationSection() {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <div className="gradient-line w-8" />
-            <span className="text-xs uppercase tracking-[0.25em] text-blue-400 font-medium">Certifications</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-blue-400 font-medium">Courses</span>
           </div>
           <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-6">Courses</h3>
           <div className="space-y-4">
