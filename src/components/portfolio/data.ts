@@ -98,8 +98,7 @@ export const skills = [
 
 export const experiences = [
   {
-    title: 'Account Manager',
-    subtitle: 'Traffic Manager',
+    title: 'Traffic Manager',
     company: 'Rama Medical Group',
     period: 'Apr 2025 — Present',
     color: 'bg-blue-500',

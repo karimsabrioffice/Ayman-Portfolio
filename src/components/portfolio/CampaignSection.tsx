@@ -66,7 +66,7 @@ function CampaignRama({ onImageClick }: { onImageClick: (src: string) => void })
       {/* Metadata Cards with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Account Manager / Traffic Manager', icon: User, iconColor: 'text-amber-400' },
+          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-amber-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '3 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
@@ -182,7 +182,7 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
       {/* Metadata with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-orange-400' },
+          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-orange-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '4 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
@@ -400,7 +400,7 @@ function CampaignStarsSmile({ onImageClick }: { onImageClick: (src: string) => v
       {/* Metadata Cards with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-rose-400' },
+          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-rose-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '7 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
