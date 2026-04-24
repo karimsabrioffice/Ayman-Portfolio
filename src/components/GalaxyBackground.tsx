@@ -110,33 +110,44 @@ export default function GalaxyBackground() {
       ctx.clearRect(0, 0, width, height);
 
       // ─── Milky Way Band ───
-      // Draw using a rotated rounded band with smooth gradients
+      // Draw using a rotated elliptical band with radial gradients
+      // Avoids fillRect which caused white line/edge artifacts
       ctx.save();
       ctx.translate(width / 2, height / 2);
       ctx.rotate(-Math.PI / 6);
 
-      // Outer soft glow
-      const outerGrad = ctx.createLinearGradient(0, -120, 0, 120);
-      outerGrad.addColorStop(0, 'rgba(139,92,246,0)');
-      outerGrad.addColorStop(0.2, 'rgba(139,92,246,0.008)');
-      outerGrad.addColorStop(0.4, 'rgba(59,130,246,0.015)');
-      outerGrad.addColorStop(0.5, 'rgba(180,160,255,0.025)');
-      outerGrad.addColorStop(0.6, 'rgba(59,130,246,0.015)');
-      outerGrad.addColorStop(0.8, 'rgba(139,92,246,0.008)');
+      // Outer soft glow — use elliptical radialGradient instead of fillRect
+      const outerRx = width * 0.9;
+      const outerRy = 160;
+      const outerGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, outerRy);
+      outerGrad.addColorStop(0, 'rgba(180,160,255,0.025)');
+      outerGrad.addColorStop(0.3, 'rgba(59,130,246,0.018)');
+      outerGrad.addColorStop(0.6, 'rgba(139,92,246,0.008)');
       outerGrad.addColorStop(1, 'rgba(139,92,246,0)');
+      ctx.save();
+      ctx.scale(outerRx / outerRy, 1);
+      ctx.beginPath();
+      ctx.arc(0, 0, outerRy, 0, Math.PI * 2);
       ctx.fillStyle = outerGrad;
-      ctx.fillRect(-width, -120, width * 2, 240);
+      ctx.fill();
+      ctx.restore();
 
-      // Inner brighter core
+      // Inner brighter core — also elliptical
       const shimmerOpacity = 0.012 + Math.sin(time * 0.0004) * 0.006;
-      const innerGrad = ctx.createLinearGradient(0, -30, 0, 30);
-      innerGrad.addColorStop(0, 'rgba(200,180,255,0)');
-      innerGrad.addColorStop(0.3, `rgba(200,180,255,${shimmerOpacity * 0.5})`);
-      innerGrad.addColorStop(0.5, `rgba(220,200,255,${shimmerOpacity})`);
-      innerGrad.addColorStop(0.7, `rgba(200,180,255,${shimmerOpacity * 0.5})`);
+      const innerRx = width * 0.7;
+      const innerRy = 40;
+      const innerGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, innerRy);
+      innerGrad.addColorStop(0, `rgba(220,200,255,${shimmerOpacity})`);
+      innerGrad.addColorStop(0.3, `rgba(200,180,255,${shimmerOpacity * 0.6})`);
+      innerGrad.addColorStop(0.7, `rgba(200,180,255,${shimmerOpacity * 0.2})`);
       innerGrad.addColorStop(1, 'rgba(200,180,255,0)');
+      ctx.save();
+      ctx.scale(innerRx / innerRy, 1);
+      ctx.beginPath();
+      ctx.arc(0, 0, innerRy, 0, Math.PI * 2);
       ctx.fillStyle = innerGrad;
-      ctx.fillRect(-width, -30, width * 2, 60);
+      ctx.fill();
+      ctx.restore();
 
       ctx.restore();
 

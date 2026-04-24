@@ -273,6 +273,13 @@
   background-clip: text;
 }
 
+.gradient-text-rose {
+  background: linear-gradient(135deg, #f43f5e, #ec4899, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Stat number gradient — animated shimmer */
 .gradient-text-stat {
   background: linear-gradient(

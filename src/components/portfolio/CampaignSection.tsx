@@ -6,6 +6,7 @@ import {
   LayoutGrid,
   Sun,
   Star,
+  Heart,
   User,
   Globe,
   Smartphone,
@@ -65,7 +66,7 @@ function CampaignRama({ onImageClick }: { onImageClick: (src: string) => void })
       {/* Metadata Cards with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-amber-400' },
+          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-amber-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '3 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
@@ -181,7 +182,7 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
       {/* Metadata with icons */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
-          { label: 'Role', value: 'Traffic Manager', icon: User, iconColor: 'text-orange-400' },
+          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-orange-400' },
           { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
           { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
           { label: 'Creatives', value: '4 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
@@ -343,6 +344,109 @@ function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }
   );
 }
 
+/* ─────────────── Campaign 04 — Stars Smile ─────────────── */
+function CampaignStarsSmile({ onImageClick }: { onImageClick: (src: string) => void }) {
+  const { ref, inView } = useInView();
+  const images = [
+    { src: '/campaigns/starssmile/1.png', title: "Mother's Day Celebration", desc: 'Warm maternal love campaign', num: '01' },
+    { src: '/campaigns/starssmile/2.png', title: 'Elegant Brand Design', desc: 'Luxury visual identity', num: '02' },
+    { src: '/campaigns/starssmile/3.png', title: 'Cultural Fusion Creative', desc: 'Heritage meets modernity', num: '03' },
+    { src: '/campaigns/starssmile/4.png', title: 'Seasonal Campaign', desc: 'Festive social media design', num: '04' },
+    { src: '/campaigns/starssmile/5.png', title: 'Brand Storytelling', desc: 'Emotional brand narrative', num: '05' },
+    { src: '/campaigns/starssmile/6.png', title: 'Digital Creative Suite', desc: 'Multi-platform assets', num: '06' },
+    { src: '/campaigns/starssmile/7.png', title: 'Campaign Highlights', desc: 'Visual campaign summary', num: '07' },
+  ];
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
+      {/* Hero Banner — clickable */}
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/starssmile/1.png')}>
+        <img
+          src="/campaigns/starssmile/1.png"
+          alt="Stars Smile Social Campaign"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.3) 50%, transparent 100%)' }} />
+        {/* Zoom icon */}
+        <div className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+          <ZoomIn size={16} />
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-rose-500/15 text-rose-400 border border-rose-500/20">
+              <Heart size={12} /> Campaign 04
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-blue-500/15 text-blue-400 border border-blue-500/20">
+              <MapPinned size={12} /> Saudi Arabia
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-purple-500/15 text-purple-400 border border-purple-500/20">
+              <LayoutGrid size={12} /> Social Media
+            </span>
+          </div>
+          <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl md:text-3xl font-bold text-white">
+            Stars Smile <span className="gradient-text-rose">Social Campaign</span>
+          </h3>
+        </div>
+      </div>
+
+      {/* Description */}
+      <p className="text-slate-400 text-base leading-relaxed max-w-3xl mb-8">
+        Social media campaign for Stars Smile in Saudi Arabia — elegant, emotionally resonant designs celebrating cultural moments with warm, luxurious aesthetics.
+      </p>
+
+      {/* Metadata Cards with icons */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+        {[
+          { label: 'Role', value: 'Account Manager', icon: User, iconColor: 'text-rose-400' },
+          { label: 'Market', value: 'Saudi Arabia', icon: Globe, iconColor: 'text-blue-400' },
+          { label: 'Platform', value: 'Social Media', icon: Smartphone, iconColor: 'text-purple-400' },
+          { label: 'Creatives', value: '7 Designs', icon: ImageIcon, iconColor: 'text-emerald-400' },
+        ].map((m, i) => {
+          const MIcon = m.icon;
+          return (
+            <div
+              key={i}
+              className="rounded-xl p-4 flex items-start gap-3"
+              style={{ background: 'rgba(15,17,21,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}
+            >
+              <MIcon size={16} className={`${m.iconColor} mt-0.5 flex-shrink-0`} />
+              <div>
+                <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">{m.label}</p>
+                <p className="text-white text-sm font-medium">{m.value}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Gallery — 7 images in responsive grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {images.map((img, i) => (
+          <div key={i} className="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.05)' }} onClick={() => onImageClick(img.src)}>
+            <img src={img.src} alt={img.title} className="gallery-image w-full h-64 md:h-80 object-cover" loading="lazy" />
+            <div className="gallery-overlay absolute inset-0 flex items-end p-5" style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.9) 0%, transparent 60%)' }}>
+              <div>
+                <span className="text-rose-400/60 text-xs font-mono mb-1 block">{img.num}</span>
+                <p className="text-white font-medium text-sm">{img.title}</p>
+                <p className="text-slate-400 text-xs">{img.desc}</p>
+              </div>
+            </div>
+            {/* Zoom icon */}
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center bg-black/40 text-white/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+              <ZoomIn size={14} />
+            </div>
+            {/* Rose border glow on hover */}
+            <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: 'inset 0 0 0 1px rgba(244,63,94,0.3), 0 0 20px rgba(244,63,94,0.1)' }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ─────────────── Campaign Section (wrapper) ─────────────── */
 export default function CampaignSection({ onImageClick }: { onImageClick: (src: string) => void }) {
   return (
@@ -373,6 +477,16 @@ export default function CampaignSection({ onImageClick }: { onImageClick: (src: 
 
       {/* Campaign 03 */}
       <CampaignOriel onImageClick={onImageClick} />
+
+      {/* Decorative Separator */}
+      <div className="campaign-separator">
+        <span className="px-4 py-1.5 rounded-full text-xs font-medium text-slate-500 border border-white/[0.06]" style={{ background: 'rgba(15,17,21,0.8)' }}>
+          Campaign 04
+        </span>
+      </div>
+
+      {/* Campaign 04 */}
+      <CampaignStarsSmile onImageClick={onImageClick} />
     </Section>
   );
 }

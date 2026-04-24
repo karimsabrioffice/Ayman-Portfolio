@@ -23,7 +23,7 @@ export const navLinks = [
 
 export const stats = [
   { value: '5+', label: 'Years Experience', icon: Calendar, iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
-  { value: '3', label: 'Agencies', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+  { value: '4', label: 'Agencies', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
   { value: '50+', label: 'Campaigns Managed', icon: BarChart3, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
   { value: '100%', label: 'Client Satisfaction', icon: ThumbsUp, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
 ];
@@ -97,7 +97,7 @@ export const skills = [
 
 export const experiences = [
   {
-    title: 'Traffic Manager',
+    title: 'Account Manager',
     company: 'Rama Medical Group',
     period: 'Apr 2025 — Present',
     color: 'bg-blue-500',
