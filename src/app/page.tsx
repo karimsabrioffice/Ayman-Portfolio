@@ -20,6 +20,11 @@ const GalaxyBackground = dynamic(() => import('@/components/GalaxyBackground'), 
   ssr: false,
 });
 
+// Dynamic import MouseEffects to avoid SSR canvas issues
+const MouseEffects = dynamic(() => import('@/components/MouseEffects'), {
+  ssr: false,
+});
+
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -63,6 +68,9 @@ export default function Home() {
     <div className="relative min-h-screen noise-overlay" style={{ background: 'rgb(5, 5, 8)' }}>
       {/* ───── Galaxy Background (replaces Glow Orbs) ───── */}
       <GalaxyBackground />
+
+      {/* ───── Mouse Effects (cursor trail, tilt, magnetic) ───── */}
+      <MouseEffects />
 
       {/* ───── Navigation ───── */}
       <Navigation scrolled={scrolled} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />

@@ -19,7 +19,7 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-slate-400 text-sm uppercase tracking-[0.2em] mb-3 animate-fade-in-left" style={{ animationDelay: '0.1s' }}>
-            Traffic Manager
+            Account Manager
           </p>
 
           {/* Name */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mb-8 animate-fade-in-left" style={{ animationDelay: '0.3s' }}>
-            Experienced Traffic Manager specializing in campaign management, client relations, and workflow optimization. Proven track record of delivering impactful marketing campaigns across the MENA region.
+            Experienced Account Manager specializing in campaign management, client relations, and workflow optimization. Proven track record of delivering impactful marketing campaigns across the MENA region.
           </p>
 
           {/* CTAs */}
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 <div>
                   <img
                     src="/profile.png"
-                    alt="Ayman Faried — Traffic Manager"
+                    alt="Ayman Faried — Account Manager"
                     className="w-64 h-80 sm:w-72 sm:h-96 object-cover"
                     fetchPriority="high"
                   />
