@@ -59,6 +59,9 @@ function ExpContent({ exp, alignRight }: { exp: typeof experiences[number]; alig
       <h3 className="font-[family-name:var(--font-space-grotesk)] text-white font-semibold text-lg">
         {exp.title}
       </h3>
+      {exp.subtitle && (
+        <p className="text-slate-400 text-sm font-medium">{exp.subtitle}</p>
+      )}
       <p className={`text-sm mb-4 ${exp.textColor}`}>{exp.company}</p>
       <ul className={`space-y-2 ${alignRight ? 'md:text-right' : ''}`}>
         {exp.items.map((item, j) => (
