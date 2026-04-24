@@ -1,0 +1,180 @@
+import {
+  Workflow,
+  ClipboardList,
+  Users,
+  Clock,
+  Handshake,
+  ChartColumn,
+  TrendingUp,
+  ShieldCheck,
+  Calendar,
+  Building2,
+  BarChart3,
+  ThumbsUp,
+} from 'lucide-react';
+
+export const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Campaigns', href: '#campaign' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
+];
+
+export const stats = [
+  { value: '5+', label: 'Years Experience', icon: Calendar, iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
+  { value: '3', label: 'Agencies', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+  { value: '50+', label: 'Campaigns Managed', icon: BarChart3, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
+  { value: '100%', label: 'Client Satisfaction', icon: ThumbsUp, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
+];
+
+export const skills = [
+  {
+    num: '01',
+    title: 'Workflow Management',
+    desc: 'Oversee end-to-end workflows across creative, media, and client servicing teams, ensuring smooth operations and timely campaign delivery.',
+    icon: Workflow,
+    color: 'bg-blue-500/20 text-blue-400',
+    accentColor: 'blue',
+  },
+  {
+    num: '02',
+    title: 'Campaign Planning & Briefing',
+    desc: 'Develop clear, structured briefs that define objectives, deliverables, and timelines, ensuring alignment across all teams before execution.',
+    icon: ClipboardList,
+    color: 'bg-purple-500/20 text-purple-400',
+    accentColor: 'purple',
+  },
+  {
+    num: '03',
+    title: 'Team Coordination',
+    desc: 'Manage task allocation across designers, copywriters, and developers while resolving bottlenecks and aligning priorities to maintain productivity.',
+    icon: Users,
+    color: 'bg-cyan-500/20 text-cyan-400',
+    accentColor: 'cyan',
+  },
+  {
+    num: '04',
+    title: 'Timeline & Deadline Management',
+    desc: 'Plan, track, and manage project timelines to ensure all deliverables are completed on schedule and meet client expectations.',
+    icon: Clock,
+    color: 'bg-amber-500/20 text-amber-400',
+    accentColor: 'amber',
+  },
+  {
+    num: '05',
+    title: 'Client Relations',
+    desc: 'Act as the main point of contact for clients, managing communication, handling feedback cycles, and maintaining strong, long-term relationships.',
+    icon: Handshake,
+    color: 'bg-emerald-500/20 text-emerald-400',
+    accentColor: 'emerald',
+  },
+  {
+    num: '06',
+    title: 'Performance Tracking',
+    desc: 'Monitor campaign progress and workflow efficiency, providing reports with insights and recommendations to support decision-making.',
+    icon: ChartColumn,
+    color: 'bg-rose-500/20 text-rose-400',
+    accentColor: 'rose',
+  },
+  {
+    num: '07',
+    title: 'Campaign Optimization',
+    desc: 'Collaborate with media and content teams to analyze performance and continuously improve campaign results.',
+    icon: TrendingUp,
+    color: 'bg-violet-500/20 text-violet-400',
+    accentColor: 'violet',
+  },
+  {
+    num: '08',
+    title: 'Quality Control',
+    desc: 'Review all deliverables before submission to ensure accuracy, consistency, and alignment with brand guidelines.',
+    icon: ShieldCheck,
+    color: 'bg-teal-500/20 text-teal-400',
+    accentColor: 'teal',
+  },
+];
+
+export const experiences = [
+  {
+    title: 'Traffic Manager',
+    company: 'Rama Medical Group',
+    period: 'Apr 2025 — Present',
+    color: 'bg-blue-500',
+    dotColor: 'bg-blue-500',
+    textColor: 'text-blue-400',
+    borderColor: 'border-blue-500/30',
+    leftBorderColor: '#3b82f6',
+    items: [
+      'Managing workflow between creative, media, and client servicing teams',
+      'Monitoring project timelines and ensuring on-schedule delivery',
+      'Analyzing workflow efficiency and providing performance reports',
+    ],
+  },
+  {
+    title: 'Account Manager',
+    company: 'Run Marketing Agency',
+    period: 'Jan 2024 — Present',
+    color: 'bg-purple-500',
+    dotColor: 'bg-purple-500',
+    textColor: 'text-purple-400',
+    borderColor: 'border-purple-500/30',
+    leftBorderColor: '#8b5cf6',
+    items: [
+      'Implementing and communicating client feedback to social media teams',
+      'Providing monthly performance reports with key metrics analysis',
+    ],
+  },
+  {
+    title: 'Account Manager',
+    company: 'Azraak Marketing Agency',
+    period: 'Nov 2022 — Dec 2023',
+    color: 'bg-emerald-500',
+    dotColor: 'bg-emerald-500',
+    textColor: 'text-emerald-400',
+    borderColor: 'border-emerald-500/30',
+    leftBorderColor: '#10b981',
+    items: [
+      'Primary liaison between clients and marketing team',
+      'Managed content calendars and timely posting across platforms',
+    ],
+  },
+  {
+    title: 'Branch Manager',
+    company: "McDonald's Manfoods",
+    period: 'Sep 2020 — Oct 2022',
+    color: 'bg-amber-500',
+    dotColor: 'bg-amber-500',
+    textColor: 'text-amber-400',
+    borderColor: 'border-amber-500/30',
+    leftBorderColor: '#f59e0b',
+    items: [
+      'Managed daily operations ensuring food quality and safety',
+      'Achieved sales targets and contributed to revenue growth',
+    ],
+  },
+  {
+    title: 'Branch Manager',
+    company: "Queen's Peak Restaurant",
+    period: 'Jan 2019 — Aug 2020',
+    color: 'bg-rose-500',
+    dotColor: 'bg-rose-500',
+    textColor: 'text-rose-400',
+    borderColor: 'border-rose-500/30',
+    leftBorderColor: '#f43f5e',
+    items: [
+      'Supervised daily operations with adherence to quality standards',
+      'Developed strategies to increase sales and customer satisfaction',
+    ],
+  },
+];
+
+export const educations = [
+  {
+    degree: 'Bachelor of Commerce',
+    school: 'Mansoura University',
+    period: '2016 — 2020',
+    field: 'Business Administration',
+    accentColor: '#3b82f6',
+  },
+];

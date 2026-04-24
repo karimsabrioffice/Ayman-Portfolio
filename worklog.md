@@ -153,3 +153,88 @@
 - Lint passes with no errors
 - Page compiles and renders successfully (HTTP 200)
 - All visual polish improvements implemented with premium animations and consistent design
+
+---
+
+## Task 3 — Comprehensive Refactor of Ayman Faried Portfolio (Agent: full-stack-developer)
+
+**Date:** 2026-04-24
+
+### What was done:
+
+1. **Decomposed monolithic page.tsx (1282 lines → 101 lines)** into 14 separate component files:
+   - `src/components/portfolio/data.ts` — All static data (navLinks, stats, skills, experiences, educations)
+   - `src/components/portfolio/useInView.ts` — Optimized IntersectionObserver hook with shared observer cache
+   - `src/components/portfolio/Navigation.tsx` — Nav bar (mobile + desktop)
+   - `src/components/portfolio/HeroSection.tsx` — Hero section with photo and intro
+   - `src/components/portfolio/StatsSection.tsx` — Stats grid with StatCard sub-component
+   - `src/components/portfolio/AboutSection.tsx` — Skills/What I Do section (exports shared Section wrapper)
+   - `src/components/portfolio/ExperienceSection.tsx` — Work experience timeline
+   - `src/components/portfolio/CampaignSection.tsx` — All 3 campaign showcases
+   - `src/components/portfolio/EducationSection.tsx` — Education & certifications
+   - `src/components/portfolio/ContactSection.tsx` — Contact form/social links
+   - `src/components/portfolio/Footer.tsx` — Footer
+   - `src/components/portfolio/Lightbox.tsx` — Lightbox modal
+   - `src/components/portfolio/BackToTop.tsx` — Back to top button
+
+2. **Created GalaxyBackground component** (`src/components/GalaxyBackground.tsx`):
+   - Canvas-based galaxy/milky way background with milky way diagonal band + shimmer
+   - Multiple layers of twinkling stars (varied sizes, opacity, twinkle rates)
+   - Pulsing/floating nebula clouds in brand colors (blue #3b82f6, purple #8b5cf6, emerald #10b981)
+   - Occasional shooting star effect
+   - Performant requestAnimationFrame loop
+   - Dynamically imported with `ssr: false` to avoid canvas SSR issues
+   - Replaces old "Background Glow Orbs" div
+
+3. **Fixed social links** (both Contact section AND Footer):
+   - LinkedIn URL: `https://www.linkedin.com/in/aymanfaried17` → `https://www.linkedin.com/in/ayman-faried-0a8405347/`
+   - Twitter/X → Facebook: `https://x.com/aymanfaried17` → `https://web.facebook.com/ayman.faried`
+   - Replaced `Twitter` icon import with `Facebook` icon from lucide-react
+   - Facebook hover colors: `hover:text-blue-500 hover:bg-blue-600/10`
+
+4. **Fixed campaign image aspect ratios**:
+   - Added `aspect-ratio: 3/4` and `object-fit: cover` to `.gallery-image` CSS class
+   - Prevents image squishing across all campaign galleries
+
+5. **Fixed profile image**:
+   - Added `fetchPriority="high"` for faster above-the-fold loading
+
+6. **Performance improvements**:
+   - Optimized `useInView` hook to use a shared IntersectionObserver instance per threshold (observer cache) instead of creating one per element
+   - Added `loading="lazy"` on all below-fold campaign images
+   - Added Galaxy background animation keyframes to globals.css
+   - Added `will-change: transform, opacity` for `.animate-float`, `.animate-pulse-glow`, `.animate-shimmer`
+   - Added `contain: layout style` for `.galaxy-star`
+   - Added `content-visibility: auto` with `contain-intrinsic-size: 0 800px` for below-fold `section[id]`
+
+7. **Updated globals.css**:
+   - Gallery image aspect-ratio fix
+   - Galaxy background keyframes (twinkle, twinkle-slow, float-nebula, shooting-star, milky-way-shimmer)
+   - Performance CSS rules (will-change, contain, content-visibility)
+
+### Files Created:
+- `src/components/GalaxyBackground.tsx`
+- `src/components/portfolio/data.ts`
+- `src/components/portfolio/useInView.ts`
+- `src/components/portfolio/Navigation.tsx`
+- `src/components/portfolio/HeroSection.tsx`
+- `src/components/portfolio/StatsSection.tsx`
+- `src/components/portfolio/AboutSection.tsx`
+- `src/components/portfolio/ExperienceSection.tsx`
+- `src/components/portfolio/CampaignSection.tsx`
+- `src/components/portfolio/EducationSection.tsx`
+- `src/components/portfolio/ContactSection.tsx`
+- `src/components/portfolio/Footer.tsx`
+- `src/components/portfolio/Lightbox.tsx`
+- `src/components/portfolio/BackToTop.tsx`
+
+### Files Modified:
+- `src/app/page.tsx` — Refactored from 1282 lines to 101 lines
+- `src/app/globals.css` — Added galaxy animations, aspect-ratio fix, performance CSS
+
+### Result:
+- Build succeeds with no errors
+- Lint passes with no issues
+- All visual design and text content preserved
+- Galaxy background replaces glow orbs with animated stars, nebula, and shooting stars
+- Social links corrected in both contact section and footer
