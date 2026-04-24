@@ -17,3 +17,21 @@ Work Log:
 Stage Summary:
 - All 4 tasks completed: title change, galaxy fix, mouse effects fix, new campaign
 - Build compiles without errors
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Add Acting Videos section with 3 Google Drive embedded videos
+
+Work Log:
+- Created ActingVideos.tsx component with 3 video cards
+- Videos embedded via Google Drive preview iframes (autoplay, encrypted-media, picture-in-picture allowed)
+- Each video card has 16:9 aspect ratio iframe + title bar with Play icon
+- Added ActingVideos section to page.tsx between Campaigns and Education
+- Added "Acting" nav link to data.ts navLinks array
+- Build passes successfully
+
+Stage Summary:
+- New Acting Videos section added with 3 playable Google Drive videos
+- Videos: ال3 شخصيات, 3 أشخاص من مجالات مختلفة عاملين, الأب مبيصرفش غير عالتعليم
+- Navigation updated with Acting link

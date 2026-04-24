@@ -9,6 +9,7 @@ import StatsSection from '@/components/portfolio/StatsSection';
 import AboutSection from '@/components/portfolio/AboutSection';
 import ExperienceSection from '@/components/portfolio/ExperienceSection';
 import CampaignSection from '@/components/portfolio/CampaignSection';
+import ActingVideos from '@/components/portfolio/ActingVideos';
 import EducationSection from '@/components/portfolio/EducationSection';
 import ContactSection from '@/components/portfolio/ContactSection';
 import Footer from '@/components/portfolio/Footer';
@@ -89,6 +90,9 @@ export default function Home() {
 
       {/* ───── Campaign Showcase ───── */}
       <CampaignSection onImageClick={openLightbox} />
+
+      {/* ───── Acting Videos ───── */}
+      <ActingVideos />
 
       {/* ───── Education & Certifications ───── */}
       <EducationSection />
