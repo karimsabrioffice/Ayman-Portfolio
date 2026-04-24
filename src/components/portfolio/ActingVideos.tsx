@@ -12,39 +12,24 @@ interface VideoItem {
 
 const videos: VideoItem[] = [
   {
-    title: 'ال3 شخصيات',
-    driveUrl: 'https://drive.google.com/file/d/1SH0SMlagT-z1F9VmpyFQ6zwu5rKUNDvT/preview',
-    num: '01',
-  },
-  {
     title: '3 أشخاص من مجالات مختلفة عاملين',
     driveUrl: 'https://drive.google.com/file/d/1TI_0hlrru1ED-yCbqAUcYH5pzZGrS-Xc/preview',
-    num: '02',
-  },
-  {
-    title: 'الأب مبيصرفش غير عالتعليم',
-    driveUrl: 'https://drive.google.com/file/d/19G8PJebO1AQQBzt8DDmr93Ivf5Ieuw3z/preview',
-    num: '03',
+    num: '01',
   },
   {
     title: 'المدير الجديد',
     driveUrl: 'https://drive.google.com/file/d/1jLGxxGcfKfefpS6F-tbdjDOtrtMEkh40/preview',
-    num: '04',
-  },
-  {
-    title: 'سكشن الانترفيو',
-    driveUrl: 'https://drive.google.com/file/d/1dSVBGzIUwuu_aXftvLK0SroOwcqRLA3u/preview',
-    num: '05',
+    num: '02',
   },
   {
     title: 'Ai and Tech',
     driveUrl: 'https://drive.google.com/file/d/1BftSbUy8s9FrxO-aU9-b1uuFgxTX3O01/preview',
-    num: '06',
+    num: '03',
   },
   {
     title: 'عملت كل حاجة عشان تترقى',
     driveUrl: 'https://drive.google.com/file/d/1_eS_XebrxC6g4DTAbEZ0nxKPX1oKa6ru/preview',
-    num: '07',
+    num: '04',
   },
 ];
 
