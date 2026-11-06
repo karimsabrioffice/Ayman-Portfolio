@@ -64,6 +64,7 @@ export default function AboutSection() {
                   blue: '#3b82f6', purple: '#8b5cf6', cyan: '#06b6d4',
                   amber: '#f59e0b', emerald: '#10b981', rose: '#f43f5e',
                   violet: '#7c3aed', teal: '#14b8a6',
+                  pink: '#ec4899', orange: '#f97316', sky: '#0ea5e9', fuchsia: '#d946ef',
                 };
                 const c = colors[s.accentColor] || '#3b82f6';
                 (e.currentTarget as HTMLElement).style.borderLeftColor = c;
