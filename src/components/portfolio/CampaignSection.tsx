@@ -28,9 +28,9 @@ function CampaignRama({ onImageClick }: { onImageClick: (src: string) => void })
       className={`mb-4 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Hero Banner — clickable */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://z-cdn-media.chatglm.cn/files/9d94c84a-2f04-4503-aa2e-342431bff5ad.png?auth_key=1876880941-541e26890c0d4afaa430ab413dc01509-0-01783a3eaa1fcb8a8f7a030a64c0d489')}>
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/rama/2.webp')}>
         <img
-          src="https://z-cdn-media.chatglm.cn/files/9d94c84a-2f04-4503-aa2e-342431bff5ad.png?auth_key=1876880941-541e26890c0d4afaa430ab413dc01509-0-01783a3eaa1fcb8a8f7a030a64c0d489"
+          src="/campaigns/rama/2.webp"
           alt="Rama Clinics Brand Campaign"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -92,19 +92,19 @@ function CampaignRama({ onImageClick }: { onImageClick: (src: string) => void })
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/b4dd6242-f071-44b1-a1ce-1853efa807e8.png?auth_key=1876880941-7130c4d7544341c3abb2ff387d560b24-0-7df42f3db015224960943f963f4516cc',
+            src: '/campaigns/rama/1.webp',
             title: 'Traditional Heritage',
             desc: 'Cultural street with QR integration',
             num: '01',
           },
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/9d94c84a-2f04-4503-aa2e-342431bff5ad.png?auth_key=1876880941-541e26890c0d4afaa430ab413dc01509-0-01783a3eaa1fcb8a8f7a030a64c0d489',
+            src: '/campaigns/rama/2.webp',
             title: 'Luxury Night Branding',
             desc: 'Modern-traditional cityscape',
             num: '02',
           },
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/008be7b7-7763-4179-9cf5-ecd58e3fa633.png?auth_key=1876880941-195887eb92834d54b25dcb2ef35afaee-0-41160742d41db5588fddc9891b1e4ef9',
+            src: '/campaigns/rama/3.webp',
             title: 'Premium Lifestyle',
             desc: 'Private jet luxury experience',
             num: '03',
@@ -141,9 +141,9 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
       className={`mb-4 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Hero Banner — clickable */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('https://z-cdn-media.chatglm.cn/files/ccfc575c-fca8-42cc-9133-25077d13539d.png?auth_key=1876881557-0f32bd3ad40c49219fd59d800fbd446f-0-c92a85c9b921482e6871ec7965dff7b8')}>
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/alshakreen/3.webp')}>
         <img
-          src="https://z-cdn-media.chatglm.cn/files/ccfc575c-fca8-42cc-9133-25077d13539d.png?auth_key=1876881557-0f32bd3ad40c49219fd59d800fbd446f-0-c92a85c9b921482e6871ec7965dff7b8"
+          src="/campaigns/alshakreen/3.webp"
           alt="Alshakreen Desert Heritage Campaign"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -235,22 +235,22 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {[
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/57d80953-37ab-4e85-8fe3-c2cd860bfeba.png?auth_key=1876881557-58f2a85f9153414fa2e186e60fc7b884-0-12bde7a8aaa3442162f9a9f5f8b839ae',
+            src: '/campaigns/alshakreen/1.webp',
             title: 'Desert Falconry Scene',
             num: '01',
           },
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/98c2ebdb-e71f-4c37-9b90-09853c97e3a7.png?auth_key=1876881557-7a06ec4ba0e44da0a1970c75b565278c-0-be4f9effcfa7cab9243616b3b3ecb58d',
+            src: '/campaigns/alshakreen/2.webp',
             title: 'Eid Al-Adha Gathering',
             num: '02',
           },
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/ccfc575c-fca8-42cc-9133-25077d13539d.png?auth_key=1876881557-0f32bd3ad40c49219fd59d800fbd446f-0-c92a85c9b921482e6871ec7965dff7b8',
+            src: '/campaigns/alshakreen/3.webp',
             title: 'Heritage Architecture',
             num: '03',
           },
           {
-            src: 'https://z-cdn-media.chatglm.cn/files/ff4600b1-3104-4049-bb7c-7b0237b93a3a.png?auth_key=1876881557-c98cbd3e3c38421d874b800d7b0a9309-0-f9fbf92388fc97ca1d5bd6101c56e9b7',
+            src: '/campaigns/alshakreen/4.webp',
             title: 'Gift Unboxing Moment',
             num: '04',
           },
