@@ -24,7 +24,7 @@ export const navLinks = [
 
 export const stats = [
   { value: '5+', label: 'Years Experience', icon: Calendar, iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
-  { value: '3', label: 'Marketing Roles', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+  { value: '4', label: 'Marketing Roles', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
   { value: '50+', label: 'Campaigns Managed', icon: BarChart3, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
   { value: '2', label: 'Markets — KSA & Egypt', icon: Globe2, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
 ];
@@ -98,9 +98,26 @@ export const skills = [
 
 export const experiences = [
   {
+    title: 'Account Manager & Content Creator',
+    company: 'Emporia Marketing Agency',
+    period: 'Feb 2026 — Present',
+    color: 'bg-cyan-500',
+    dotColor: 'bg-cyan-500',
+    textColor: 'text-cyan-400',
+    borderColor: 'border-cyan-500/30',
+    leftBorderColor: '#06b6d4',
+    items: [
+      'Managing client accounts end-to-end — briefs, approvals, and day-to-day communication',
+      'Planning monthly content calendars aligned with each brand’s goals and tone of voice',
+      'Writing content ideas, captions, and scripts, and presenting on camera for short-form video',
+      'Coordinating designers and video editors to deliver content on schedule',
+      'Reporting monthly performance and turning insights into next month’s content plan',
+    ],
+  },
+  {
     title: 'Traffic Manager',
     company: 'Rama Medical Group',
-    period: 'Apr 2025 — Present',
+    period: 'Feb 2025 — Feb 2026',
     color: 'bg-blue-500',
     dotColor: 'bg-blue-500',
     textColor: 'text-blue-400',

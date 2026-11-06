@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mb-8 animate-fade-in-left" style={{ animationDelay: '0.3s' }}>
-            Traffic &amp; Account Manager with 5+ years running campaigns end-to-end — from brief to delivery — for healthcare and lifestyle brands in Saudi Arabia and Egypt.
+            Traffic &amp; Account Manager with 5+ years running campaigns end-to-end — from brief to delivery — for healthcare and lifestyle brands in Saudi Arabia and Egypt — now also creating content on camera.
           </p>
 
           {/* CTAs */}
