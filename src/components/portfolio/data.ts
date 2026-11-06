@@ -117,7 +117,7 @@ export const experiences = [
   {
     title: 'Traffic Manager',
     company: 'Rama Medical Group',
-    period: 'Feb 2025 — Feb 2026',
+    period: 'Apr 2025 — Feb 2026',
     color: 'bg-blue-500',
     dotColor: 'bg-blue-500',
     textColor: 'text-blue-400',
@@ -132,7 +132,7 @@ export const experiences = [
   {
     title: 'Account Manager',
     company: 'Run Marketing Agency',
-    period: 'Jan 2024 — May 2026',
+    period: 'Jan 2024 — Apr 2025',
     color: 'bg-purple-500',
     dotColor: 'bg-purple-500',
     textColor: 'text-purple-400',
