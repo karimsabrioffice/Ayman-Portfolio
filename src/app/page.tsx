@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 
 import Navigation from '@/components/portfolio/Navigation';
 import HeroSection from '@/components/portfolio/HeroSection';
-import StatsSection from '@/components/portfolio/StatsSection';
 import AboutSection from '@/components/portfolio/AboutSection';
 import ExperienceSection from '@/components/portfolio/ExperienceSection';
 import ContentPlansSection from '@/components/portfolio/ContentPlansSection';
@@ -79,9 +78,6 @@ export default function Home() {
 
       {/* ───── Hero Section ───── */}
       <HeroSection />
-
-      {/* ───── Stats Section ───── */}
-      <StatsSection />
 
       {/* ───── About / What I Do ───── */}
       <AboutSection />
