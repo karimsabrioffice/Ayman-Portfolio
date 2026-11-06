@@ -8,6 +8,7 @@ import HeroSection from '@/components/portfolio/HeroSection';
 import StatsSection from '@/components/portfolio/StatsSection';
 import AboutSection from '@/components/portfolio/AboutSection';
 import ExperienceSection from '@/components/portfolio/ExperienceSection';
+import ContentPlansSection from '@/components/portfolio/ContentPlansSection';
 import CampaignSection from '@/components/portfolio/CampaignSection';
 import ActingVideos from '@/components/portfolio/ActingVideos';
 import EducationSection from '@/components/portfolio/EducationSection';
@@ -87,6 +88,9 @@ export default function Home() {
 
       {/* ───── Work Experience ───── */}
       <ExperienceSection />
+
+      {/* ───── Content Plans (Emporia clients) ───── */}
+      <ContentPlansSection onImageClick={openLightbox} />
 
       {/* ───── Campaign Showcase ───── */}
       <CampaignSection onImageClick={openLightbox} />

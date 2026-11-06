@@ -16,6 +16,7 @@ import {
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Content Plans', href: '#content-plans' },
   { label: 'Campaigns', href: '#campaign' },
   { label: 'Acting', href: '#acting' },
   { label: 'Education', href: '#education' },
