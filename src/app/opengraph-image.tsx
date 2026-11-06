@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Ayman Faried — Traffic & Account Manager";
+export const alt = "Ayman Faried — Account Manager & Content Creator";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,7 +21,7 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ fontSize: 28, letterSpacing: 6, color: "#94a3b8", textTransform: "uppercase" }}>
-          Traffic &amp; Account Manager
+          Account Manager &amp; Content Creator
         </div>
         <div style={{ fontSize: 120, fontWeight: 700, lineHeight: 1.05, marginTop: 20 }}>Ayman Faried</div>
         <div style={{ width: 160, height: 6, marginTop: 28, background: "linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b)" }} />

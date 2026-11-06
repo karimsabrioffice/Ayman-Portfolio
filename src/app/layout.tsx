@@ -23,13 +23,14 @@ const SITE_URL = "https://ayman-faried-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Ayman Faried — Traffic & Account Manager",
+  title: "Ayman Faried — Account Manager & Content Creator",
   description:
-    "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization across top agencies.",
+    "Portfolio of Ayman Faried — Account Manager & Content Creator with 5+ years of experience in campaign management, client relations, and content creation.",
   keywords: [
     "Ayman Faried",
     "Traffic Manager",
     "Account Manager",
+    "Content Creator",
     "Campaign Manager",
     "Marketing",
     "Portfolio",
@@ -39,18 +40,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Ayman Faried" }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Ayman Faried — Traffic & Account Manager",
+    title: "Ayman Faried — Account Manager & Content Creator",
     url: SITE_URL,
     siteName: "Ayman Faried",
     description:
-      "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization.",
+      "Portfolio of Ayman Faried — Account Manager & Content Creator with 5+ years of experience in campaign management, client relations, and content creation.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ayman Faried — Traffic & Account Manager",
+    title: "Ayman Faried — Account Manager & Content Creator",
     description:
-      "Traffic & Account Manager with 5+ years running social media campaigns for brands in Saudi Arabia and Egypt.",
+      "Account Manager & Content Creator with 5+ years running social media campaigns for brands in Saudi Arabia and Egypt.",
   },
 };
 

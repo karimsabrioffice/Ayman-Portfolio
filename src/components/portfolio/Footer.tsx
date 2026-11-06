@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div>
             <span className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white">AF.</span>
-            <p className="text-slate-600 text-xs mt-2">Traffic &amp; Account Manager · Cairo</p>
+            <p className="text-slate-600 text-xs mt-2">Account Manager &amp; Content Creator · Cairo</p>
           </div>
 
           {/* Navigation Links */}

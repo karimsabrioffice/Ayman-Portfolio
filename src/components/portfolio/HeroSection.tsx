@@ -19,7 +19,7 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-slate-400 text-sm uppercase tracking-[0.2em] mb-3 animate-fade-in-left" style={{ animationDelay: '0.1s' }}>
-            Traffic &amp; Account Manager
+            Account Manager &amp; Content Creator
           </p>
 
           {/* Name */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mb-8 animate-fade-in-left" style={{ animationDelay: '0.3s' }}>
-            Traffic &amp; Account Manager with 5+ years running campaigns end-to-end — from brief to delivery — for healthcare and lifestyle brands in Saudi Arabia and Egypt — now also creating content on camera.
+            Account Manager &amp; Content Creator with 5+ years running campaigns end-to-end — from brief to delivery — for healthcare and lifestyle brands in Saudi Arabia and Egypt, and creating content on camera.
           </p>
 
           {/* CTAs */}
@@ -72,7 +72,7 @@ export default function HeroSection() {
                     src="/profile.webp"
                     width={576}
                     height={612}
-                    alt="Ayman Faried — Traffic & Account Manager"
+                    alt="Ayman Faried — Account Manager & Content Creator"
                     className="w-64 h-80 sm:w-72 sm:h-96 object-cover"
                     fetchPriority="high"
                   />
