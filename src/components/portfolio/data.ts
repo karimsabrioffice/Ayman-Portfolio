@@ -132,7 +132,7 @@ export const experiences = [
   {
     title: 'Account Manager',
     company: 'Run Marketing Agency',
-    period: 'Jan 2024 — Present',
+    period: 'Jan 2024 — May 2026',
     color: 'bg-purple-500',
     dotColor: 'bg-purple-500',
     textColor: 'text-purple-400',
