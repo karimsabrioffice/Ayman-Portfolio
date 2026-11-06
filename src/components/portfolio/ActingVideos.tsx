@@ -3,6 +3,7 @@
 import { Play, Clapperboard } from 'lucide-react';
 import { Section } from './AboutSection';
 import { useInView } from './useInView';
+import VideoEmbed from './VideoEmbed';
 
 interface VideoItem {
   title: string;
@@ -48,18 +49,7 @@ function VideoCard({ video }: { video: VideoItem }) {
           border: '1px solid rgba(255,255,255,0.05)',
         }}
       >
-        {/* Video Player */}
-        <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
-          <iframe
-            src={video.driveUrl}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full rounded-t-2xl"
-            style={{ border: 'none' }}
-            title={video.title}
-            loading="lazy"
-          />
-        </div>
+        <VideoEmbed src={video.driveUrl} title={video.title} />
 
         {/* Video Info */}
         <div className="p-5 flex items-center gap-4">
@@ -68,7 +58,7 @@ function VideoCard({ video }: { video: VideoItem }) {
           </div>
           <div className="flex-1 min-w-0">
             <span className="text-indigo-400/60 text-xs font-mono mb-1 block">{video.num}</span>
-            <p className="text-white font-medium text-sm leading-relaxed truncate">{video.title}</p>
+            <p dir="auto" className="text-white font-medium text-sm leading-relaxed truncate">{video.title}</p>
           </div>
         </div>
       </div>

@@ -10,14 +10,13 @@ import {
   Calendar,
   Building2,
   BarChart3,
-  ThumbsUp,
+  Globe2,
 } from 'lucide-react';
 
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Campaigns', href: '#campaign' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Acting', href: '#acting' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
@@ -25,9 +24,9 @@ export const navLinks = [
 
 export const stats = [
   { value: '5+', label: 'Years Experience', icon: Calendar, iconColor: 'text-blue-400', iconBg: 'bg-blue-500/15' },
-  { value: '4', label: 'Agencies', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
+  { value: '3', label: 'Marketing Roles', icon: Building2, iconColor: 'text-purple-400', iconBg: 'bg-purple-500/15' },
   { value: '50+', label: 'Campaigns Managed', icon: BarChart3, iconColor: 'text-amber-400', iconBg: 'bg-amber-500/15' },
-  { value: '100%', label: 'Client Satisfaction', icon: ThumbsUp, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
+  { value: '2', label: 'Markets — KSA & Egypt', icon: Globe2, iconColor: 'text-emerald-400', iconBg: 'bg-emerald-500/15' },
 ];
 
 export const skills = [

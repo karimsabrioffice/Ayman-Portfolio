@@ -19,13 +19,17 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 });
 
+const SITE_URL = "https://ayman-faried-portfolio.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Ayman Faried — Traffic Manager & Campaign Strategist",
+  metadataBase: new URL(SITE_URL),
+  title: "Ayman Faried — Traffic & Account Manager",
   description:
     "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization across top agencies.",
   keywords: [
     "Ayman Faried",
     "Traffic Manager",
+    "Account Manager",
     "Campaign Manager",
     "Marketing",
     "Portfolio",
@@ -33,14 +37,20 @@ export const metadata: Metadata = {
     "Cairo",
   ],
   authors: [{ name: "Ayman Faried" }],
-  icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Ayman Faried — Traffic Manager & Campaign Strategist",
+    title: "Ayman Faried — Traffic & Account Manager",
+    url: SITE_URL,
+    siteName: "Ayman Faried",
     description:
       "Portfolio of Ayman Faried — Traffic Manager with 5+ years of experience in campaign management, client relations, and workflow optimization.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ayman Faried — Traffic & Account Manager",
+    description:
+      "Traffic & Account Manager with 5+ years running social media campaigns for brands in Saudi Arabia and Egypt.",
   },
 };
 

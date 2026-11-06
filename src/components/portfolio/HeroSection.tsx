@@ -9,17 +9,17 @@ export default function HeroSection() {
         {/* Left */}
         <div className="order-2 lg:order-1">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 animate-fade-in-left" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 animate-fade-in-left" style={{ background: 'rgba(34,197,94,0.14)', border: '1px solid rgba(34,197,94,0.35)' }}>
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
             </span>
-            <span className="text-green-400 text-xs font-medium">Available for Opportunities</span>
+            <span className="text-green-300 text-xs font-semibold">Available for Opportunities</span>
           </div>
 
           {/* Subtitle */}
           <p className="text-slate-400 text-sm uppercase tracking-[0.2em] mb-3 animate-fade-in-left" style={{ animationDelay: '0.1s' }}>
-            Account Manager
+            Traffic &amp; Account Manager
           </p>
 
           {/* Name */}
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg mb-8 animate-fade-in-left" style={{ animationDelay: '0.3s' }}>
-            Experienced Account Manager specializing in campaign management, client relations, and workflow optimization. Proven track record of delivering impactful marketing campaigns across the MENA region.
+            Traffic &amp; Account Manager with 5+ years running campaigns end-to-end — from brief to delivery — for healthcare and lifestyle brands in Saudi Arabia and Egypt.
           </p>
 
           {/* CTAs */}
@@ -47,11 +47,11 @@ export default function HeroSection() {
               <ArrowRight size={16} />
             </a>
             <a
-              href="#experience"
+              href="#campaign"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]"
               style={{ border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)' }}
             >
-              View Experience
+              View Campaigns
             </a>
           </div>
         </div>
@@ -69,8 +69,10 @@ export default function HeroSection() {
               <div className="photo-border-inner">
                 <div>
                   <img
-                    src="/profile.png"
-                    alt="Ayman Faried — Account Manager"
+                    src="/profile.webp"
+                    width={576}
+                    height={612}
+                    alt="Ayman Faried — Traffic & Account Manager"
                     className="w-64 h-80 sm:w-72 sm:h-96 object-cover"
                     fetchPriority="high"
                   />

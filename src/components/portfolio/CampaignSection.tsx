@@ -280,12 +280,12 @@ function CampaignAlshakreen({ onImageClick }: { onImageClick: (src: string) => v
 function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
   const images = [
-    { src: '/campaigns/orielclinics/1.png', title: 'Brand Identity', desc: 'Visual brand expression', num: '01' },
-    { src: '/campaigns/orielclinics/2.png', title: 'Social Media Design', desc: 'Digital creative assets', num: '02' },
-    { src: '/campaigns/orielclinics/3.png', title: 'Campaign Creative', desc: 'Marketing visuals', num: '03' },
-    { src: '/campaigns/orielclinics/4.png', title: 'Content Strategy', desc: 'Engaging content design', num: '04' },
-    { src: '/campaigns/orielclinics/5.png', title: 'Visual Storytelling', desc: 'Brand narrative design', num: '05' },
-    { src: '/campaigns/orielclinics/6.png', title: 'Digital Presence', desc: 'Online brand experience', num: '06' },
+    { src: '/campaigns/orielclinics/1.webp', title: 'Brand Identity', desc: 'Visual brand expression', num: '01' },
+    { src: '/campaigns/orielclinics/2.webp', title: 'Social Media Design', desc: 'Digital creative assets', num: '02' },
+    { src: '/campaigns/orielclinics/3.webp', title: 'Campaign Creative', desc: 'Marketing visuals', num: '03' },
+    { src: '/campaigns/orielclinics/4.webp', title: 'Content Strategy', desc: 'Engaging content design', num: '04' },
+    { src: '/campaigns/orielclinics/5.webp', title: 'Visual Storytelling', desc: 'Brand narrative design', num: '05' },
+    { src: '/campaigns/orielclinics/6.webp', title: 'Digital Presence', desc: 'Online brand experience', num: '06' },
   ];
   return (
     <div
@@ -293,9 +293,9 @@ function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }
       className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Hero Banner — clickable */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/orielclinics/1.png')}>
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/orielclinics/1.webp')}>
         <img
-          src="/campaigns/orielclinics/1.png"
+          src="/campaigns/orielclinics/1.webp"
           alt="Oriel Clinics Campaign"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -323,6 +323,11 @@ function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }
         </div>
       </div>
 
+      {/* Description */}
+      <p className="text-slate-400 text-base leading-relaxed max-w-3xl mb-8">
+        Social media creatives for Oriel Clinics in Egypt — six designs managed from brief through creative review to final delivery.
+      </p>
+
       {/* Gallery — 2 columns with 6 images */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((img, i) => (
@@ -348,13 +353,13 @@ function CampaignOriel({ onImageClick }: { onImageClick: (src: string) => void }
 function CampaignStarsSmile({ onImageClick }: { onImageClick: (src: string) => void }) {
   const { ref, inView } = useInView();
   const images = [
-    { src: '/campaigns/starssmile/1.png', title: "Mother's Day Celebration", desc: 'Warm maternal love campaign', num: '01' },
-    { src: '/campaigns/starssmile/2.png', title: 'Elegant Brand Design', desc: 'Luxury visual identity', num: '02' },
-    { src: '/campaigns/starssmile/3.png', title: 'Cultural Fusion Creative', desc: 'Heritage meets modernity', num: '03' },
-    { src: '/campaigns/starssmile/4.png', title: 'Seasonal Campaign', desc: 'Festive social media design', num: '04' },
-    { src: '/campaigns/starssmile/5.png', title: 'Brand Storytelling', desc: 'Emotional brand narrative', num: '05' },
-    { src: '/campaigns/starssmile/6.png', title: 'Digital Creative Suite', desc: 'Multi-platform assets', num: '06' },
-    { src: '/campaigns/starssmile/7.png', title: 'Campaign Highlights', desc: 'Visual campaign summary', num: '07' },
+    { src: '/campaigns/starssmile/1.webp', title: "Mother's Day Celebration", desc: 'Warm maternal love campaign', num: '01' },
+    { src: '/campaigns/starssmile/2.webp', title: 'Elegant Brand Design', desc: 'Luxury visual identity', num: '02' },
+    { src: '/campaigns/starssmile/3.webp', title: 'Cultural Fusion Creative', desc: 'Heritage meets modernity', num: '03' },
+    { src: '/campaigns/starssmile/4.webp', title: 'Seasonal Campaign', desc: 'Festive social media design', num: '04' },
+    { src: '/campaigns/starssmile/5.webp', title: 'Brand Storytelling', desc: 'Emotional brand narrative', num: '05' },
+    { src: '/campaigns/starssmile/6.webp', title: 'Digital Creative Suite', desc: 'Multi-platform assets', num: '06' },
+    { src: '/campaigns/starssmile/7.webp', title: 'Campaign Highlights', desc: 'Visual campaign summary', num: '07' },
   ];
   return (
     <div
@@ -362,9 +367,9 @@ function CampaignStarsSmile({ onImageClick }: { onImageClick: (src: string) => v
       className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Hero Banner — clickable */}
-      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/starssmile/1.png')}>
+      <div className="relative rounded-2xl overflow-hidden h-80 md:h-96 mb-8 cursor-pointer" onClick={() => onImageClick('/campaigns/starssmile/1.webp')}>
         <img
-          src="/campaigns/starssmile/1.png"
+          src="/campaigns/starssmile/1.webp"
           alt="Stars Smile Social Campaign"
           className="w-full h-full object-cover"
           loading="lazy"
